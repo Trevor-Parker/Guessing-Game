@@ -16,30 +16,32 @@
 //The computer generates a random number and saves it
     var i = 0
 //For the number of guesses
-    let yournumber;
+    let yourNumber = null;
 //to allow the while loop to function
     
     while (yourNumber != randomNumber) {
-      let yourNumber = Number(prompt("Please enter a number between 1 to 10"));
+      yourNumber = Number(prompt("Please enter a number between 1 to 10"));
         console.log(yourNumber);
+//Allowing the Player to enter their number
         if (yourNumber > 10 || yourNumber < 1) {
           alert("Please enter a number from 1 to 10. Press F5 to try again")
         }
+//Checking if entered number is within parameters
       if (yourNumber < randomNumber) {
         alert("Your guess was too low, guess again");
+        i++
       }
 //Defining winning conditions
       else if (yourNumber > randomNumber) {
         alert("Your guess was too high, guess again")
         i++
               }
-      else {
-        alert("Your guess was too low, guess again.")
-        i++
-              }
+      else{
+        alert("You guessed it in " + i + " guesses!");
+        break;
+      }
 //Defining too low and too high
       }
-    alert("You guessed it in " + i + " guesses!");
     document.getElementById("random").innerHTML = "Correct! The number was " + randomNumber;
   </script>
 </body>
