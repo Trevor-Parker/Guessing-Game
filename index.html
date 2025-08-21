@@ -8,28 +8,37 @@
 </head>
 <!-- defines time, encoding, author name, title -->
 <body>
+  <p id="random">filler</p>
+  
   <script>
     randomNumber = Math.floor(Math.random() * 10) +1;
-    document.getElementById("Random").innerHTML = randomNumber;
     console.log(randomNumber);
 //The computer generates a random number and saves it
-    let yourNumber = Number(prompt("Please enter a number between 1 to 10"));
-      console.log(yourNumber);
-//The player chooses their number
-    for (let i = 0; i++) {
-      if (yourNumber === randomNumber) {
-        alert("You guessed it in" + i + "guesses");
+    var i = 0
+//For the number of guesses
+    while (yourNumber != randomNumber) {
+      let yourNumber = Number(prompt("Please enter a number between 1 to 10"));
+        console.log(yourNumber);
+        if (yourNumber > 10 || yourNumber < 1) {
+          alert("Please enter a number from 1 to 10. Press F5 to try again")
+        }
+      if (yourNumber < randomNumber) {
+        alert("Your guess was too low, guess again");
         break;
       }
 //Defining winning conditions
       else if (yourNumber > randomNumber) {
         alert("Your guess was too high, guess again")
+        i++
               }
       else {
         alert("Your guess was too low, guess again.")
+        i++
               }
 //Defining too low and too high
       }
+    alert("You guessed it in " + i + " guesses!");
+    document.getElementById("Random").innerHTML = "Correct! The number was " + randomNumber;
   </script>
 </body>
 </html>
