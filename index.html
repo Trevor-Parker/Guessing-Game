@@ -1,1 +1,30 @@
-
+<!DOCTYPE HTML>
+<html lang = "en">
+<head>
+  <meta name="viewport" content="width=device-width"> 
+  <meta name="author" content="Trevor Parker"> 
+  <meta charset="UTF-8">
+  <title>Guessing Game</title>
+</head>
+<!-- defines time, encoding, author name, title -->
+<script>
+  randomNumber = Math.floor(Math.random() * 10) +1;
+  document.getElementById("Random").innerHTML = randomNumber;
+  console.log(randomNumber);
+//The computer generates a random number and saves it
+  let yourNumber = prompt ("Please enter a number between 1 to 10);
+    console.log(yourNumber);
+//The player chooses their number
+  while (yourNumber != randomNumber) {
+    if (yourNumber === randomNumber); {
+      alert("You have won!!");
+    }
+    else if (yourNumber > randomNumber); {
+      alert("Your Number is bigger than the Computers. Please try again.")
+            }
+    else {
+      alert("Your Number is lower than the Computer. Please try again.")
+            }
+    }
+</script>
+</html>
