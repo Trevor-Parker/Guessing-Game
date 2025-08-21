@@ -1,1 +1,54 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+<head>
+  <meta name="viewport" content="width=device-width"> 
+  <meta name="author" content="Trevor Parker"> 
+  <meta charset="UTF-8">
+  <title>Guessing Game</title>
+</head>
+<!-- defines time, encoding, author name, title -->
+<body>
+  <p id="random">filler</p>
+  
+  <script>
+    let replay = "yes";
+//for replay option with a while loop
 
+    while (replay === "yes"){
+      const randomNumber = Math.floor(Math.random() * 10) +1;
+      console.log(randomNumber);
+//The computer generates a random number and saves it
+      var i = 1
+//For the number of guesses
+      let yourNumber = null;
+//to allow the while loop to function
+    
+      while (yourNumber != randomNumber) {
+        yourNumber = Number(prompt("Please enter a number between 1 to 10"));
+          console.log(yourNumber);
+//Allowing the Player to enter their number
+          if (yourNumber > 10 || yourNumber < 1) {
+            alert("Please enter a number from 1 to 10. Press F5 to try again")
+          }
+//Checking if entered number is within parameters
+        if (yourNumber < randomNumber) {
+          alert("Your guess was too low, guess again");
+          i++
+        }
+//Defining winning conditions
+        else if (yourNumber > randomNumber) {
+          alert("Your guess was too high, guess again")
+          i++
+              }
+        else{
+          alert("You guessed it in " + i + " guesses!");
+          document.getElementById("random").innerHTML = "Correct! The number was " + randomNumber;
+          break;
+        }
+      }
+//Defining too low, too high, and when to end the loop
+      replay = prompt("Would you like to play again? Yes or No").toLowerCase();
+        }
+  </script>
+</body>
+</html>
