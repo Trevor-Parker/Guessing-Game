@@ -16,6 +16,9 @@
 //The computer generates a random number and saves it
     var i = 0
 //For the number of guesses
+    let yournumber;
+//to allow the while loop to function
+    
     while (yourNumber != randomNumber) {
       let yourNumber = Number(prompt("Please enter a number between 1 to 10"));
         console.log(yourNumber);
@@ -24,7 +27,6 @@
         }
       if (yourNumber < randomNumber) {
         alert("Your guess was too low, guess again");
-        break;
       }
 //Defining winning conditions
       else if (yourNumber > randomNumber) {
@@ -38,7 +40,7 @@
 //Defining too low and too high
       }
     alert("You guessed it in " + i + " guesses!");
-    document.getElementById("Random").innerHTML = "Correct! The number was " + randomNumber;
+    document.getElementById("random").innerHTML = "Correct! The number was " + randomNumber;
   </script>
 </body>
 </html>
